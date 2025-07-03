@@ -1,0 +1,28 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go workspace & build artifacts
+bin/
+build/
+dist/
+*.out
+
+# Dependency directories (if using vendoring)
+vendor/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
