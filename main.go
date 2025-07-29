@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/aoncodev/qrbackend/controllers"
@@ -20,16 +21,13 @@ func init() {
 func main() {
 	r := gin.Default()
 
+	// CORS configuration - allow both development and production origins
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173", "http://localhost:3000"},
+		AllowOrigins:     []string{"http://localhost:5173", "http://localhost:3000", "https://qrbackend-doo3.onrender.com", "https://www.qrbackend-doo3.onrender.com"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			// Helpful in development with multiple ports or localhost aliases
-			return origin == "http://localhost:5173"
-		},
 		MaxAge: 12 * time.Hour,
 	}))
 
