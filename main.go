@@ -22,7 +22,7 @@ func main() {
 
 	// CORS configuration - allow both development and production origins
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173", "http://localhost:3000", "https://qrbackend-doo3.onrender.com", "https://www.qrbackend-doo3.onrender.com", "https://employee-clock-frontend.vercel.app/", "https://www.employee-clock-frontend.vercel.app/"},
+		AllowOrigins:     []string{"http://localhost:5173", "http://localhost:3000", "https://qrbackend-doo3.onrender.com", "https://www.qrbackend-doo3.onrender.com", "https://employee-clock-frontend.vercel.app", "https://www.employee-clock-frontend.vercel.app"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Accept", "Authorization"},
 		ExposeHeaders:    []string{"Content-Length"},
