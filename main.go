@@ -1,7 +1,6 @@
 package main
 
 import (
-	"os"
 	"time"
 
 	"github.com/aoncodev/qrbackend/controllers"
