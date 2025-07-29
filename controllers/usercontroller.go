@@ -399,10 +399,14 @@ func GetEmployeeReports(c *gin.Context) {
 			})
 		}
 
+		// Convert to local time for frontend display
+		localClockIn := log.ClockIn.Local()
+		localClockOut := log.ClockOut.Local()
+		
 		reports = append(reports, gin.H{
-			"date":               log.ClockIn.Format("2006-01-02"),
-			"clock_in":           log.ClockIn,
-			"clock_out":          log.ClockOut,
+			"date":               localClockIn.Format("2006-01-02"),
+			"clock_in":           localClockIn,
+			"clock_out":          localClockOut,
 			"breaks":             breaks,
 			"total_worked_hours": workHours,
 			"total_break_hours":  breakHours,
